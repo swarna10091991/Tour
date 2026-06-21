@@ -1,4 +1,4 @@
-name: Tourism
+name: Tour
 
 on:
   push:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install -r Tourism/requirements.txt
+        run: pip install -r Tour/requirements.txt
       - name: Upload Dataset to Hugging Face Hub
         env:
           HF_TOKEN: "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"
-        run: python Tourism/model_building/data_register.py
+        run: python Tour/model_building/data_register.py
 
   data-prep:
     needs: register-dataset
